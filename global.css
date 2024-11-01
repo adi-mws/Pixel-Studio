@@ -7,6 +7,8 @@
     --background-color: #750D3A;
     --background-color-2: #dd9dad;
     --background-color-3: rgba(251, 251, 251, 0.789);
+    --background-color-4: rgba(248, 185, 243, 0.789);
+    --background-color-5: transparent;
     --gray-text: #606060;
     --whitesmoke: whitesmoke;
     --alt-black: black; 
@@ -23,16 +25,20 @@
     --c2:  rgba(227, 22, 111, 0.6);
     --c3:  rgba(243, 192, 214, 1);
 
+
 }
 
 .darkmode {
     --alt-black: white; 
     --whitesmoke: black;
-    --alt-white: rgba(12, 4, 8, 0.993);
+    --alt-white: rgba(15, 1, 8, 0.993);
     --glass-black: rgba(101, 101, 101, 0.63); 
     --background-color-2: rgba(101, 101, 101, 0.63);
     --background-color-3:rgba(0, 0, 0, 0.763);
     --glass-secondary: rgba(49, 49, 49, 0.63);
+    --background-color-4: #83122f;
+    --background-color-5: #1b1b1b;
+
     --gray-text: #b3b3b3;
     --hero-bg: url("/assets/hero-bg-dark.png");
     --hero: url("/assets/hero-dark.png");

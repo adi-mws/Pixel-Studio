@@ -44,6 +44,7 @@ header {
     left: 0;
     backdrop-filter: blur(100px);
     z-index: 50;
+
 }
 
 .website-heading {
@@ -51,12 +52,23 @@ header {
     color: var(--alt-black);
     font-size: 2em;
     transition: var(--theme-transition);
+    z-index: 70;
+
 }
 
 nav {
     width: auto;
     height: auto;
     z-index: 100;
+    display: flex;
+    align-items: center;
+
+    button {
+        font-size: 1.4em;
+        display: none;
+        color: var(--alt-black);
+        z-index: 70;
+    }
 }
 
 
@@ -847,23 +859,23 @@ nav>ul>li:last-child>a {
 /* Footer Starts */
 
 footer {
-    display: grid; 
-    grid-template: 90% 10% / 100%; 
+    display: grid;
+    grid-template: 90% 10% / 100%;
     background: #0F0000;
-    width: 100%; 
+    width: 100%;
     height: 300px;
-    
+
 
     .footer-content {
         width: 100%;
-        height: 100%; 
-        display: grid; 
+        height: 100%;
+        display: grid;
         grid-template: 100% / 33.3% 33.3% 33.3%;
     }
 
-    .footer-content > div {
-        width: 100%; 
-        height: 100%; 
+    .footer-content>div {
+        width: 100%;
+        height: 100%;
     }
 
     .footer-main {
@@ -871,20 +883,20 @@ footer {
 
         .footer-title {
             font-family: var(--head-font);
-            color: white; 
+            color: white;
             font-size: 2em;
         }
 
         .footer-redirects {
-            display: flex; 
+            display: flex;
             margin-top: 1em;
-            gap: 1.5em; 
+            gap: 1.5em;
 
-            a  {
+            a {
                 font-size: 1.5em;
                 color: rgb(216, 216, 216);
                 transition: .3s;
-                
+
                 i {
                     font-size: 1em;
                 }
@@ -902,20 +914,21 @@ footer {
         }
     }
 
-    .footer-link1, .footer-link2 {
-        display: flex; 
+    .footer-link1,
+    .footer-link2 {
+        display: flex;
         gap: 4em;
     }
 
     .footer-list {
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 1em;
     }
 
     .footer-list-item {
-        color: rgb(177, 177, 177); 
+        color: rgb(177, 177, 177);
         text-decoration: none;
         font-family: var(--secondary-font);
         font-size: .9em;
@@ -928,19 +941,20 @@ footer {
 
     }
 
-        
+
     .footer-list-title {
         font-size: 1.3em;
         margin-top: 2.5em;
         margin-bottom: 1em;
-        color: white; 
+        color: white;
         text-align: center;
         font-family: var(--primary-font);
         font-weight: 300;
     }
+
     .footer-copyright {
-        width: 100%; 
-        text-align: center; 
+        width: 100%;
+        text-align: center;
         color: white;
         font-size: .8em;
         font-family: var(--primary-font);
@@ -949,12 +963,73 @@ footer {
 
 
 
-footer > div {
-    width: 100%; 
+footer>div {
+    width: 100%;
     height: 100%;
 }
 
 /* Footer Ends */
+
+/* Media Queries */
+
+
+@media screen and (max-width: 1368px) {}
+
+@media screen and (max-width: 992px) {
+
+    nav li:nth-child(3),
+    nav li:nth-child(2) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: flex;
+        position: fixed; 
+        top: 0; 
+        left: -1000px;
+        flex-direction: column; 
+        width: 100%; 
+        min-height: 100%; 
+        padding: 10em 0;
+        background: var(--alt-white);
+        z-index: 30;
+        transition: .3s; 
+    }
+
+    .nav-menubar-btn:focus-within ~ ul {
+        left: 0;
+    }
+    nav li:nth-child(3),
+    nav li:nth-child(2) {
+        display: block;
+    }
+    nav button {
+        display: inline-block;
+    }
+
+    footer {
+        display: none;
+    }
+
+
+
+
+
+   
+}
+
+@media screen and (max-width: 576px) {
+    .website-heading {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 400px) {}
+
+
+
 
 
 /* Eclipse */
