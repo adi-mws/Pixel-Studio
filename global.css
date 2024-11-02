@@ -15,6 +15,7 @@
     --alt-white: white;
     --hero-bg: url("/assets/hero-bg.png");
     --hero: url("/assets/hero.png");
+    --logo:url('/assets/px-logo.png');
     --glass-black: black;
     --glass-secondary: var(--secondary-color);
     --theme-transition: .3s;
