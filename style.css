@@ -208,7 +208,7 @@ nav>ul>li:last-child>a {
 
 
 .hero-secondary-content {
-    width: 80%;
+    width: 80% !important;
     background-color: var(--background-color);
     display: flex;
     align-items: center;
@@ -975,36 +975,102 @@ footer>div {
 
 @media screen and (max-width: 1368px) {}
 
+@media screen and (max-width: 1100px) {
+    #hero-section {
+        height: 650px;
+        font-size: .9em;
+    }
+
+    .hero-img {
+        height: 50% !important;
+    }
+}
+
 @media screen and (max-width: 992px) {
+
+
 
     nav li:nth-child(3),
     nav li:nth-child(2) {
         display: none;
     }
+
+
+    #hero-section {
+        height: auto;
+        grid-template: auto auto / auto !important;
+        background: none;
+        font-size: 1em;
+
+        .hero-main {
+            order: 2;
+            height: auto;
+            padding: 2em 0;
+
+            .hero-main-content {
+                height: 100%;
+                width: 80%;
+            }
+        }
+
+        .hero-redirections {
+            justify-content: center;
+        }
+
+        .hero-secondary-content {
+            button {
+                height: 100%;
+                max-height: 40px;
+            }
+        }
+
+        .hero-secondary {
+            margin-top: 8em;
+            height: 500px;
+
+            .hero-img {
+                height: 100%;
+                min-height: 100%;
+                width: 70%;
+            }
+
+            .hero-secondary-content {
+                width: 50%;
+            }
+        }
+
+        .hero-main-content {
+            gap: 2em;
+            justify-content: flex-start;
+        }
+    }
+
 }
 
 @media screen and (max-width: 768px) {
     nav ul {
         display: flex;
-        position: fixed; 
-        top: 0; 
+        position: fixed;
+        top: 0;
         left: -1000px;
-        flex-direction: column; 
-        width: 100%; 
-        min-height: 100%; 
+        flex-direction: column;
+        width: 100%;
+        min-height: 100%;
         padding: 10em 0;
         background: var(--alt-white);
         z-index: 30;
-        transition: .3s; 
+        transition: .3s;
     }
 
-    .nav-menubar-btn:focus-within ~ ul {
+    .nav-menubar-btn:focus-within~ul {
         left: 0;
     }
+
     nav li:nth-child(3),
     nav li:nth-child(2) {
         display: block;
     }
+
     nav button {
         display: inline-block;
     }
@@ -1017,12 +1083,44 @@ footer>div {
 
 
 
-   
 }
 
 @media screen and (max-width: 576px) {
     .website-heading {
         font-size: 1.5em;
+    }
+
+    #hero-section {
+        .hero-secondary {
+            margin-top: 3em;
+        }
+
+        .hero-img {
+            min-height: 60% !important;
+            width: 90% !important;
+        }
+
+        .hero-secondary-content {
+            flex-direction: column;
+            width: 90% !important;
+            justify-content: center;
+
+
+            button {
+                padding: .8em 2em;
+            }
+        }
+
+        .hero-main {
+            font-size: .8em;
+
+            .hero-redirections {
+                justify-content: flex-start;
+
+                button:last-child {
+                }
+            }
+        }
     }
 }
 
