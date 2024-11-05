@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pixel Studio</title>
+    <a rel="stylesheet" href="../global.css">
+    <a rel="stylesheet" href="../style.css">
+    <a rel="stylesheet" href="/css/blog.css">
+    <a rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <a rel="preconnect" href="https://fonts.googleapis.com">
+    <a rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <a rel="preconnect" href="https://fonts.googleapis.com">
+    <a rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <a
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ribeye+Marrow&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="login-section">
+        <form action="">
+            <div className="AdminLogin">
+                <h2>Admin Login</h2>
+                <form>
+
+                    <div className="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder='Enter Email' name='email' required />
+                        <p className="error"></p>
+                    </div>
+
+                    <div className="form-group">
+                        <label for="password">Password</label>
+                        <a to="/admin-forgot-password" className="forgot-password">Forgot Password?</a>
+                        <input type="password" id="password" placeholder='Enter Password' name="password"/>
+                        <button type="button" className="eye-btn show" onClick={handleEyeBtn}><i className={`fa-regular
+                                ></i></button>
+                        <p className="error"></p>
+                    </div>
+
+                    <button type="submit">Login</button>
+                    <div className="form-group">
+                        <input type="checkbox" name="keep-signed" id="keep-me-signed" />
+                        <label for="keep-me-signed">Keep me signed in</label>
+                    </div>
+                    <div className="alternate-option">
+                        <p>or login with</p>
+                    </div>
+                    <a to="" className='continue-with-google'><img src={googlelogo} alt="" />Continue with Google
+                    </a>
+                </form>
+            </div>
+        </form>
+    </section>
+    <!-- fixed content -->
+    <button class="darkmode-btn"><i class="fa-solid fa-moon"></i></button>
+    <script src="../script.js" type="module"></script>
+</body>
+
+</html>

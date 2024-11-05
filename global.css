@@ -84,3 +84,15 @@ button {
 
 }
 
+.hidden {
+    opacity: 0; 
+    transition: all .9s; 
+    transform: translateY(10px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0px);
+
+}
+
