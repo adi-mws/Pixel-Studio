@@ -1,7 +1,56 @@
-.AdminLogin {
+.login-section {
     width: 100%;
+    display: grid;
+    grid-template: 100% / 55% 45%;
+    height: 100vh
+
+}
+
+.login-section>div {
+    width: 100%;
+    height: 100%;
+}
+
+.login-content {
+    background-image: url('/assets/auth/auth-bg.png');
+    background-size: 100% 100%;
     display: flex; 
     flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    gap: 2em; 
+    padding: 0 3em;
+    position: relative; 
+
+    p {
+        color: white; 
+        font-family: var(--primary-font);
+        font-size: 2em;
+    }
+
+    .login-title {
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+
+
+    .login-side-title, .login-description {
+        font-weight: 300;
+    }
+
+    .login-description {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+   
+}
+
+
+.login-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 2em;
     justify-content: center;
     align-items: center;
@@ -10,59 +59,60 @@
 
 }
 
-.AdminLogin h2 {
-    text-align: center; 
-    font-family: var(--rubik);
+.login-wrapper h2 {
+    text-align: center;
+    font-family: var(--secondary-font);
 }
 
 
-.AdminLogin form {
+.login-wrapper form {
     width: auto;
-    height: auto; 
-    display: flex; 
-    flex-direction: column; 
+    height: auto;
+    display: flex;
+    flex-direction: column;
     gap: 2em;
-    
+
 
     .form-group {
-        display: flex; 
-        flex-direction: column; 
+        display: flex;
+        flex-direction: column;
         gap: .5em;
         position: relative;
 
-        label, input {
-            font-family: var(--rubik);
+        label,
+        input {
+            font-family: var(--secondary-font);
             font-weight: 400;
-            
+
         }
 
         input {
-            padding: .7em 2em; 
+            padding: .7em 2em;
             outline: none;
             border-radius: 8px;
             border: solid 1px gray;
             width: 300px;
         }
 
-    
+
 
         .eye-btn {
-            color: dimgray; 
+            color: dimgray;
             position: absolute;
             top: 37.5px;
-            right: 20px; 
+            right: 20px;
         }
 
         .forgot-password {
-            color: #FF698D;
-            font-family: var(--rubik);
+            color: var(--primary-color);
+            font-family: var(--secondary-font);
             font-size: .8em;
-            position: absolute; 
+            position: absolute;
             right: 10px;
 
         }
 
-        
+
     }
 
     .form-group:nth-child(2) {
@@ -72,21 +122,21 @@
     }
 
     button:not(.eye-btn) {
-        padding: .7em 3em;    
-        background-color: #FF698D;
-        font-family: var(--rubik);
-        color: white;   
-    } 
+        padding: .7em 3em;
+        background-color: var(--primary-color);
+        font-family: var(--secondary-font);
+        color: white;
+    }
 
     .alternate-option {
-        width: 100%; 
-        display: flex; 
+        width: 100%;
+        display: flex;
         justify-content: center;
-        align-items: center; 
-        position: relative; 
+        align-items: center;
+        position: relative;
 
         p {
-            font-family: var(--rubik);
+            font-family: var(--secondary-font);
             padding: .6em 2em;
             background: #F4F5F7;
             color: #999DA3;
@@ -94,49 +144,51 @@
     }
 
     .alternate-option::before {
-        width: 100%; 
+        width: 100%;
         content: '';
-        position: absolute; 
+        position: absolute;
         z-index: -1;
-        top: 50%; 
-        left: 0; 
+        top: 50%;
+        left: 0;
         border: solid 0.003em #d1d1d1;
     }
 
     .error {
-        color: #FF698D;
+        color: var(--primary-color);
         font-size: 0.8rem;
-        font-family: var(--rubik);
-      }
+        font-family: var(--secondary-font);
+    }
 
 
     .continue-with-google {
-        display: flex; 
-        align-items: center; 
+        display: flex;
+        align-items: center;
         justify-content: center;
         gap: 1em;
 
-        text-decoration: none; 
+        text-decoration: none;
         color: #4B5768;
         background: #E4E7EB;
         padding: .6em;
         font-size: .9em;
-        font-family: var(--rubik);
-        
+        font-family: var(--secondary-font);
+
     }
 
     .form-group:nth-child(4) {
-        flex-direction: row; 
+        flex-direction: row;
         gap: 1em;
         width: 100%;
+
         input {
             padding: 8px;
         }
+
         label {
             font-size: .9em;
             font-weight: 300;
         }
-        
+
     }
 
 }
@@ -151,18 +203,18 @@ input[type="checkbox"] {
     cursor: pointer;
     border-radius: 3px !important;
     position: relative;
-  }
-  
-  
-  /* Style the checkbox when checked */
-  input[type="checkbox"]:checked {
-    border: 1px solid #FF698D !important;
+}
 
-    background-color: #FF698D;
-    border-color: #FF698D;
-  }
-  
-  input[type="checkbox"]:checked::after {
+
+/* Style the checkbox when checked */
+input[type="checkbox"]:checked {
+    border: 1px solid var(--primary-color) !important;
+
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::after {
     content: '';
     position: absolute;
     top: 2px;
@@ -172,5 +224,12 @@ input[type="checkbox"] {
     border: solid white;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
-  }
-  
+
+}
+
+
+
+
+/* Media Queries for the login page */
+
+

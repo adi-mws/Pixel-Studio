@@ -5,56 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Pixel Studio</title>
-    <a rel="stylesheet" href="../global.css">
-    <a rel="stylesheet" href="../style.css">
-    <a rel="stylesheet" href="/css/blog.css">
-    <a rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <a rel="preconnect" href="https://fonts.googleapis.com">
-    <a rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <a rel="preconnect" href="https://fonts.googleapis.com">
-    <a rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <a
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ribeye+Marrow&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <section class="login-section">
-        <form action="">
-            <div className="AdminLogin">
-                <h2>Admin Login</h2>
-                <form>
+        <div class="login-content">
+            <button class="back-btn"><i class="fa-solid fa-arrow-left"></i></button>
+            <p class="login-side-title hidden">Stay Connected</p>
+            <p class="login-title hidden">Unlock Exclusive Features</p>
+            <p class="login-description hidden">Sign in to enjoy personalized updates, seamless access to your data, and a
+                tailored experience crafted just for you. We're here to help you achieve your goals effortlessly!</p>
+        </div>
+        <div class="login-wrapper">
+            <h2 class="hidden">Login to your Account</h2>
+            <form>
 
-                    <div className="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder='Enter Email' name='email' required />
-                        <p className="error"></p>
-                    </div>
+                <div class="form-group hidden">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder='Enter Email' name='email' required />
+                    <p class="error"></p>
+                </div>
 
-                    <div className="form-group">
-                        <label for="password">Password</label>
-                        <a to="/admin-forgot-password" className="forgot-password">Forgot Password?</a>
-                        <input type="password" id="password" placeholder='Enter Password' name="password"/>
-                        <button type="button" className="eye-btn show" onClick={handleEyeBtn}><i className={`fa-regular
-                                ></i></button>
-                        <p className="error"></p>
-                    </div>
+                <div class="form-group hidden">
+                    <label for="password">Password</label>
+                    <a to="/admin-forgot-password" class="forgot-password">Forgot Password?</a>
+                    <input type="password" id="password" placeholder='Enter Password' name="password" />
+                    <button type="button" class="eye-btn show" onClick=""><i class="fa-regular fa-eye"></i></button>
+                    <p class="error"></p>
+                </div>
 
-                    <button type="submit">Login</button>
-                    <div className="form-group">
-                        <input type="checkbox" name="keep-signed" id="keep-me-signed" />
-                        <label for="keep-me-signed">Keep me signed in</label>
-                    </div>
-                    <div className="alternate-option">
-                        <p>or login with</p>
-                    </div>
-                    <a to="" className='continue-with-google'><img src={googlelogo} alt="" />Continue with Google
-                    </a>
-                </form>
-            </div>
-        </form>
+                <button type="submit" class="hidden">Login</button>
+                <div class="form-group hidden">
+                    <input type="checkbox" name="keep-signed" id="keep-me-signed" />
+                    <label for="keep-me-signed">Keep me signed in</label>
+                </div>
+                <div class="alternate-option hidden">
+                    <p>or login with</p>
+                </div>
+                <a to="" class='continue-with-google hidden'><img src="/assets/auth/google.png" alt="" />Continue with Google</a>
+            </form>
+        </div>
     </section>
     <!-- fixed content -->
     <button class="darkmode-btn"><i class="fa-solid fa-moon"></i></button>

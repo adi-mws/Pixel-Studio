@@ -96,3 +96,30 @@ button {
 
 }
 
+
+/* Authentication section back button */
+.back-btn {
+    color: white; 
+    position: absolute; 
+    top: 1em; 
+    left: 2em; 
+    font-size: 1.3em;
+}
+
+
+
+
+
+
+/* @media screen and (max-width: 1368px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 576px) {
+}
+@media screen and (max-width: 400px) {
+} */
