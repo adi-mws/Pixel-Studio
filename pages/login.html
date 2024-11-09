@@ -22,32 +22,34 @@
 
 <body>
     <section class="login-section">
+        <button class="back-btn"><i class="fa-solid fa-arrow-left"></i></button>
+
         <div class="login-content">
-            <button class="back-btn"><i class="fa-solid fa-arrow-left"></i></button>
             <p class="login-side-title hidden">Stay Connected</p>
             <p class="login-title hidden">Unlock Exclusive Features</p>
-            <p class="login-description hidden">Sign in to enjoy personalized updates, seamless access to your data, and a
+            <p class="login-description hidden">Sign in to enjoy personalized updates, seamless access to your data, and
+                a
                 tailored experience crafted just for you. We're here to help you achieve your goals effortlessly!</p>
         </div>
         <div class="login-wrapper">
             <h2 class="hidden">Login to your Account</h2>
-            <form>
+            <form action="">
 
                 <div class="form-group hidden">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" placeholder='Enter Email' name='email' required />
-                    <p class="error"></p>
                 </div>
 
                 <div class="form-group hidden">
                     <label for="password">Password</label>
                     <a to="/admin-forgot-password" class="forgot-password">Forgot Password?</a>
                     <input type="password" id="password" placeholder='Enter Password' name="password" />
-                    <button type="button" class="eye-btn show" onClick=""><i class="fa-regular fa-eye"></i></button>
+                    <button type="button" class="eye-btn" onClick="handleAuthPassEyeHandler('eye-btn', 'password')"><i
+                            class="fa-regular fa-eye"></i></button>
                     <p class="error"></p>
                 </div>
 
-                <button type="submit" class="hidden">Login</button>
+                <button type="submit" class="hidden" onsubmit="() => {return handleSubmit();}">Login</button>
                 <div class="form-group hidden">
                     <input type="checkbox" name="keep-signed" id="keep-me-signed" />
                     <label for="keep-me-signed">Keep me signed in</label>
@@ -55,12 +57,52 @@
                 <div class="alternate-option hidden">
                     <p>or login with</p>
                 </div>
-                <a to="" class='continue-with-google hidden'><img src="/assets/auth/google.png" alt="" />Continue with Google</a>
+                <a to="" class='continue-with-google hidden'><img src="/assets/auth/google.png" alt="" />Continue with
+                    Google</a>
             </form>
         </div>
     </section>
     <!-- fixed content -->
     <button class="darkmode-btn"><i class="fa-solid fa-moon"></i></button>
+    <script type="module">
+        import { AuthPassEyeHandler } from '../script.js';
+        const eyeBtn = document.getElementsByClassName('eye-btn')[0];
+        const password = document.getElementById("password");
+
+        const handleAuthPassEyeHandler = (btnClass, fieldId) => {
+            const eyeBtn = document.getElementsByClassName(btnClass)[0];
+            const password = document.getElementById(fieldId);
+            AuthPassEyeHandler(eyeBtn, password);
+        }
+
+        const email = document.getElementById("email");
+        const error = document.getElementsByClassName("error")[0];
+
+
+        const isFormValid = () => {
+            if (password.value.length === 0) {
+                error.innerHTML = "Password is required";
+                return false;
+
+            } else if (password.value.length < 8) {
+                error.innerHTML = "Password must be of 8 characters"; 
+                return false;
+            }
+
+        
+        }   
+
+
+
+        const handleSubmit = () => {
+            if (!isFormValid()) {
+                console.log(isFormValid);
+                return false; 
+            } else return true;
+         }
+
+
+    </script>
     <script src="../script.js" type="module"></script>
 </body>
 

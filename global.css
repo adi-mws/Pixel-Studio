@@ -9,6 +9,8 @@
     --background-color-3: rgba(251, 251, 251, 0.789);
     --background-color-4: rgba(248, 185, 243, 0.789);
     --background-color-5: transparent;
+    --background-color-6: #E4E7EB;
+    --checkbox-color: var(--primary-color);
     --gray-text: #606060;
     --whitesmoke: whitesmoke;
     --alt-black: black; 
@@ -37,8 +39,12 @@
     --background-color-2: rgba(101, 101, 101, 0.63);
     --background-color-3:rgba(0, 0, 0, 0.763);
     --glass-secondary: rgba(49, 49, 49, 0.63);
+    --checkbox-color: transparent;
     --background-color-4: #83122f;
     --background-color-5: #1b1b1b;
+    --background-color-6: #1b1b1b;
+
+
 
     --gray-text: #b3b3b3;
     --hero-bg: url("/assets/hero-bg-dark.png");

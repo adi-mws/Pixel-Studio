@@ -2,7 +2,8 @@
     width: 100%;
     display: grid;
     grid-template: 100% / 55% 45%;
-    height: 100vh
+    height: 100vh;
+    position: relative; 
 
 }
 
@@ -20,7 +21,6 @@
     align-items: center;
     gap: 2em; 
     padding: 0 3em;
-    position: relative; 
 
     p {
         color: white; 
@@ -61,6 +61,7 @@
 
 .login-wrapper h2 {
     text-align: center;
+    color: var(--alt-black);
     font-family: var(--secondary-font);
 }
 
@@ -78,7 +79,11 @@
         flex-direction: column;
         gap: .5em;
         position: relative;
-
+        label {
+            color: var(--alt-black);
+        }
+        
+        
         label,
         input {
             font-family: var(--secondary-font);
@@ -92,6 +97,9 @@
             border-radius: 8px;
             border: solid 1px gray;
             width: 300px;
+            background: var(--background-color-5);
+            color: var(--alt-black);
+
         }
 
 
@@ -138,7 +146,7 @@
         p {
             font-family: var(--secondary-font);
             padding: .6em 2em;
-            background: #F4F5F7;
+            background: var(--background-color-6);
             color: #999DA3;
         }
     }
@@ -167,8 +175,8 @@
         gap: 1em;
 
         text-decoration: none;
-        color: #4B5768;
-        background: #E4E7EB;
+        color: var(--alt-black);
+        background: var(--background-color-6);
         padding: .6em;
         font-size: .9em;
         font-family: var(--secondary-font);
@@ -182,6 +190,7 @@
 
         input {
             padding: 8px;
+
         }
 
         label {
@@ -210,7 +219,7 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
     border: 1px solid var(--primary-color) !important;
 
-    background-color: var(--primary-color);
+    background-color: var(--checkbox-color) !important;
     border-color: var(--primary-color);
 }
 
@@ -228,8 +237,39 @@ input[type="checkbox"]:checked::after {
 }
 
 
-
+.darkmode-btn {
+    border-color: white; 
+    color: white; 
+}
 
 /* Media Queries for the login page */
 
+@media screen and (max-width: 1368px) {
+    
+}
+
+@media screen and (max-width: 992px) {
+    .login-content {
+        font-size: .9em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .login-content {
+       display: none; 
+    }
+
+    .login-section {
+        grid-template: 100% / 100%;
+    }
+
+    .back-btn {
+        color: var(--alt-black) !important;
+    }
+}
+@media screen and (max-width: 576px) {
+}
+@media screen and (max-width: 400px) {
+} 
 
