@@ -62,3 +62,15 @@ if (authBackBtn) {
 }
 
 
+export function AuthPassEyeHandler(btn , input) {
+        if (btn.children[0].classList.contains("fa-eye")) {
+            btn.children[0].classList.remove('fa-eye');
+            btn.children[0].classList.add('fa-eye-slash');
+            input.setAttribute("type", "text")
+        }
+        else {
+            btn.children[0].classList.remove("fa-eye-slash");
+            btn.children[0].classList.add("fa-eye");
+            input.setAttribute("type", "password")
+        }
+}

@@ -7,7 +7,7 @@
     <title>Login - Pixel Studio</title>
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,17 +21,17 @@
 </head>
 
 <body>
-    <section class="login-section">
+    <section class="auth-section">
         <button class="back-btn"><i class="fa-solid fa-arrow-left"></i></button>
 
-        <div class="login-content">
-            <p class="login-side-title hidden">Stay Connected</p>
-            <p class="login-title hidden">Unlock Exclusive Features</p>
-            <p class="login-description hidden">Sign in to enjoy personalized updates, seamless access to your data, and
+        <div class="auth-content">
+            <p class="auth-side-title hidden">Stay Connected</p>
+            <p class="auth-title hidden">Unlock Exclusive Features</p>
+            <p class="auth-description hidden">Sign in to enjoy personalized updates, seamless access to your data, and
                 a
                 tailored experience crafted just for you. We're here to help you achieve your goals effortlessly!</p>
         </div>
-        <div class="login-wrapper">
+        <div class="auth-wrapper">
             <h2 class="hidden">Login to your Account</h2>
             <form action="">
 
@@ -42,23 +42,24 @@
 
                 <div class="form-group hidden">
                     <label for="password">Password</label>
-                    <a to="/admin-forgot-password" class="forgot-password">Forgot Password?</a>
+                    <a to="/admin-forgot-password" class="forgot-password" href="">Forgot Password?</a>
                     <input type="password" id="password" placeholder='Enter Password' name="password" />
-                    <button type="button" class="eye-btn" onClick="handleAuthPassEyeHandler('eye-btn', 'password')"><i
+                    <button type="button" class="eye-btn"><i
                             class="fa-regular fa-eye"></i></button>
                     <p class="error"></p>
                 </div>
 
                 <button type="submit" class="hidden" onsubmit="() => {return handleSubmit();}">Login</button>
-                <div class="form-group hidden">
+                <div class="form-group keep-me-signed hidden">
                     <input type="checkbox" name="keep-signed" id="keep-me-signed" />
                     <label for="keep-me-signed">Keep me signed in</label>
                 </div>
                 <div class="alternate-option hidden">
                     <p>or login with</p>
                 </div>
-                <a to="" class='continue-with-google hidden'><img src="/assets/auth/google.png" alt="" />Continue with
+                <a href="" class='continue-with-google hidden'><img src="/assets/auth/google.png" alt="" />Continue with
                     Google</a>
+                <a href="/pages/register.html" class="main-redirect hidden">Create an Account</a>
             </form>
         </div>
     </section>
@@ -69,11 +70,15 @@
         const eyeBtn = document.getElementsByClassName('eye-btn')[0];
         const password = document.getElementById("password");
 
-        const handleAuthPassEyeHandler = (btnClass, fieldId) => {
+
+        function handleAuthPassEyeHandler(btnClass, fieldId) {
             const eyeBtn = document.getElementsByClassName(btnClass)[0];
             const password = document.getElementById(fieldId);
             AuthPassEyeHandler(eyeBtn, password);
         }
+
+        eyeBtn.addEventListener('click', () => {handleAuthPassEyeHandler('eye-btn', 'password')});
+
 
         const email = document.getElementById("email");
         const error = document.getElementsByClassName("error")[0];
@@ -88,8 +93,6 @@
                 error.innerHTML = "Password must be of 8 characters"; 
                 return false;
             }
-
-        
         }   
 
 

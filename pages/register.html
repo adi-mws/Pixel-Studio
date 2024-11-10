@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pixel Studio</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ribeye+Marrow&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="auth-section">
+        <button class="back-btn"><i class="fa-solid fa-arrow-left"></i></button>
+
+        <div class="auth-content">
+            <p class="auth-side-title hidden">Join Our Community</p>
+            <p class="auth-title hidden">Discover New Possibilities</p>
+            <p class="auth-description hidden">Create your account to unlock exclusive access, personalized features,
+                and tailored experiences. Let's start building something great together!</p>
+        </div>
+        <div class="auth-wrapper">
+            <h2 class="hidden">Create your Account</h2>
+            <form action="">
+                <div class="form-group hidden">
+                    <label for="email">Username</label>
+                    <input type="email" id="email" placeholder='Enter Username' name='text' required />
+                </div>
+
+                <div class="form-group hidden">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder='Enter Email' name='email' required />
+                </div>
+
+                <div class="form-group hidden">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder='Enter Password' name="password" />
+                    <button type="button" class="eye-btn"><i class="fa-regular fa-eye"></i></button>
+                </div>
+
+                <div class="form-group hidden">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="confirm-password" id="confirm-password" placeholder='Confirm Password' name="confirm-password" />
+                    <button type="button" class="eye-btn"><i class="fa-regular fa-eye"></i></button>
+                    <p class="error"></p>
+                </div>
+
+                <button type="submit" class="hidden" onsubmit="() => {return handleSubmit();}">Register</button>
+              
+                <a href="/pages/register.html" class="main-redirect hidden">Already have Account?</a>
+            </form>
+        </div>
+    </section>
+    <!-- fixed content -->
+    <button class="darkmode-btn"><i class="fa-solid fa-moon"></i></button>
+    <script type="module">
+        import { AuthPassEyeHandler } from '../script.js';
+        const eyeBtn = document.getElementsByClassName('eye-btn')[0];
+        const eyeBtn1 = document.getElementsByClassName('eye-btn')[1];
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
+
+
+        function handleAuthPassEyeHandler(btnClass, fieldId, classIndex) {
+            const eyeBtn = document.getElementsByClassName(btnClass)[classIndex];
+            const password = document.getElementById(fieldId);
+            AuthPassEyeHandler(eyeBtn, password);
+        }
+
+        eyeBtn.addEventListener('click', () => { handleAuthPassEyeHandler('eye-btn', 'password', 0) });
+        eyeBtn1.addEventListener('click', () => { handleAuthPassEyeHandler('eye-btn', 'confirm-password', 1) });
+
+
+        const email = document.getElementById("email");
+        const error = document.getElementsByClassName("error")[0];
+
+
+        const isFormValid = () => {
+            if (password.value.length === 0) {
+                error.innerHTML = "Password is required";
+                return false;
+
+            } else if (password.value.length < 8) {
+                error.innerHTML = "Password must be of 8 characters";
+                return false;
+            }
+        }
+
+
+
+        const handleSubmit = () => {
+            if (!isFormValid()) {
+                console.log(isFormValid);
+                return false;
+            } else return true;
+        }
+
+
+    </script>
+    <script src="../script.js" type="module"></script>
+</body>
+
+</html>
