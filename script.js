@@ -12,6 +12,7 @@ darkmodeBtn.addEventListener("click", () => {
     }
 })
 
+
 const navMenubarBtn = document.getElementsByClassName("nav-menubar-btn")[0];
 const navMenubar = document.getElementsByClassName("nav-menubar")[0];
 let menustate = false;
