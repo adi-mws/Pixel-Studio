@@ -1,16 +1,57 @@
 const darkmodeBtn = document.getElementsByClassName("darkmode-btn")[0];
-darkmodeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("darkmode");
-    if (darkmodeBtn.children[0].classList.contains("fa-moon")) {
-        darkmodeBtn.children[0].classList.remove("fa-moon");
-        darkmodeBtn.children[0].classList.add("fa-sun");
+class Mode {
+
+    constructor(btn) {
+        this.btn = btn;
     }
 
-    else {
-        darkmodeBtn.children[0].classList.remove("fa-sun");
-        darkmodeBtn.children[0].classList.add("fa-moon");
+    getCurrentMode() {
+        const mode = localStorage.getItem("mode");
+        if (mode) {
+            return mode;
+        }
+        else {
+            localStorage.setItem('mode', 'light');
+            return 'light';
+        }
     }
+
+    apply() {
+        const mode = localStorage.getItem("mode");
+        if (this.getCurrentMode() === 'light') this.applyLightMode();
+        else this.applyDarkMode();
+    }
+
+    applyDarkMode() {
+
+        this.btn.children[0].classList.remove("fa-moon");
+        this.btn.children[0].classList.add("fa-sun");
+
+        localStorage.setItem('mode', 'dark');
+        document.body.classList.add('darkmode');
+    }
+
+    applyLightMode() {  
+
+        this.btn.children[0].classList.remove("fa-sun");
+        this.btn.children[0].classList.add("fa-moon");
+
+        localStorage.setItem('mode', 'light');
+        document.body.classList.remove('darkmode');
+    }
+}
+
+const m = new Mode(darkmodeBtn);
+m.apply();
+
+darkmodeBtn.addEventListener('click', () => {
+    if (m.getCurrentMode() === 'light') {
+        m.applyDarkMode();
+    }
+    else { m.applyLightMode(); }
 })
+
+
 
 
 const navMenubarBtn = document.getElementsByClassName("nav-menubar-btn")[0];
