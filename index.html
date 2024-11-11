@@ -378,10 +378,10 @@
         })
         slideTo(currentIndex);
         // Automation of slider
-        let interval, time = 3; 
+        let interval, time = 3;
         const startInterval = () => {
             interval = setInterval(() => {
-            nextSlide();
+                nextSlide();
             }, 1000 * time);
         }
 
@@ -389,13 +389,38 @@
             clearInterval(interval);
         }
 
-        slider.addEventListener("mouseover", ()=> {
+        slider.addEventListener("mouseover", () => {
             stopInterval();
         })
 
         slider.addEventListener("mouseout", () => {
             startInterval();
         })
+
+        const swipeArea = document.getElementsByClassName('project-slider')[0];
+        let startX;
+
+        swipeArea.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        swipeArea.addEventListener("touchend", (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const diffX = endX - startX;
+
+            if (Math.abs(diffX) > 50) { // Set a threshold for swipe distance
+                if (diffX > 0) {
+                    // right -> side swipe
+                    prevSlide()
+
+                } else {
+                    // left <- side swipe
+                    nextSlide();
+
+                }
+            }
+        });
+
     </script>
 
 </body>
