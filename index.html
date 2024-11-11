@@ -41,7 +41,8 @@
             <div class="hero-logo hidden"></div>
             <div class="hero-main-content">
                 <p class="hero-title hidden">Empowering Innovation, One Pixel at a Time</p>
-                <p class="hero-description hidden">At PixelFusion, we craft cutting-edge software solutions that transform
+                <p class="hero-description hidden">At PixelFusion, we craft cutting-edge software solutions that
+                    transform
                     ideas into impactful digital experiences. From dynamic web applications to robust mobile platforms,
                     our expertise drives your business forward.</p>
                 <div class="hero-redirections">
@@ -57,7 +58,7 @@
                     solutions designed for the future.</p>
                 <button>Register Now</button>
 
-        </div>
+            </div>
         </div>
         <div class="d-circle h3 c1" id="dc-1"></div>
         <div class="d-circle h2 c3" id="dc-2"></div>
@@ -106,7 +107,8 @@
                 </div>
             </div>
         </div>
-        <button id="our-services-view-more-btn" class="hidden">View More <i class="fa-solid fa-circle-chevron-down"></i></button>
+        <button id="our-services-view-more-btn" class="hidden">View More <i
+                class="fa-solid fa-circle-chevron-down"></i></button>
     </section>
 
     <section id="wtc-section">
@@ -173,12 +175,14 @@
                 <img src="/assets/wtc/end-to-end.webp" class="project-item" alt="">
                 <img src="/assets/wtc/end-to-end.webp" class="project-item" alt="">
                 <img src="/assets/wtc/end-to-end.webp" class="project-item" alt="">
+                <img src="/assets/wtc/focused-on-Ux.webp" class="project-item" alt="">
+                <img src="/assets/wtc/focused-on-Ux.webp" class="project-item" alt="">
+                <img src="/assets/wtc/focused-on-Ux.webp" class="project-item" alt="">
+                <img src="/assets/wtc/tailored-solutions.webp" class="project-item" alt="">
+                <img src="/assets/wtc/tailored-solutions.webp" class="project-item" alt="">
+                <img src="/assets/wtc/tailored-solutions.webp" class="project-item" alt="">
             </div>
-            <div class="project-navs">
-                <div class="project-nav active"></div>
-                <div class="project-nav"></div>
-                <div class="project-nav"></div>
-            </div>
+
             <div class="project-control">
                 <button><i class="fa-solid fa-chevron-left"></i></button>
                 <button><i class="fa-solid fa-chevron-right"></i></button>
@@ -304,6 +308,95 @@
     <!-- fixed content -->
     <button class="darkmode-btn"><i class="fa-solid fa-moon"></i></button>
     <script src="script.js" type="module"></script>
+
+    <script type="module">
+
+        const analytics = {
+            globalReach: 95,
+            returningClients: 71,
+            clientSatisfaction: 95,
+            projectSuccessRate: 90,
+            agileDevelopementEfficiency: 80
+        }
+
+
+        function updateAnalytics() {
+            const globalReach = document.getElementsByClassName("wtc-doughnut")[0];
+            const wtcProgressbar = document.getElementsByClassName("wtc-progress-progressbar");
+
+
+            globalReach.style.background = `conic-gradient(#F69A9A ${analytics.globalReach}%, var(--glass-secondary) 50%) !important`; 4
+            wtcProgressbar[0].style.setProperty('--before-width', `${analytics.returningClients}%`);
+            wtcProgressbar[1].style.setProperty('--before-width', `${analytics.clientSatisfaction}%`);
+            wtcProgressbar[2].style.setProperty('--before-width', `${analytics.projectSuccessRate}%`);
+            wtcProgressbar[3].style.setProperty('--before-width', `${analytics.agileDevelopementEfficiency}%`);
+        }
+        updateAnalytics();
+
+
+        let currentIndex = 0;
+
+        const leftBtn = document.getElementsByClassName('project-control')[0].children[0];
+        const rightBtn = document.getElementsByClassName('project-control')[0].children[1];
+        const navs = document.getElementsByClassName('project-nav');
+        const slider = document.getElementsByClassName('project-slider')[0]
+        const getItemsPerSlide = () => {
+            if (window.screen.width < 576) {
+                return 1;
+            } else if (window.screen.width < 1100) {
+                return 2;
+            } else {
+                return 3;
+
+            }
+        }
+
+        const slideTo = (index) => {
+
+
+            const transValue = index * (100 / getItemsPerSlide());
+            slider.style.transform = `translateX(-${transValue}%) `;
+        }
+
+        const nextSlide = () => {
+            const func = () => { currentIndex = 0; return 0 }
+            const index = currentIndex === slider.childElementCount - getItemsPerSlide() ? func() : ++currentIndex;
+            slideTo(index);
+        }
+
+        const prevSlide = () => {
+            const func = () => { currentIndex = slider.childElementCount - getItemsPerSlide(); return slider.childElementCount - getItemsPerSlide(); }
+            const index = currentIndex == 0 ? func() : --currentIndex;
+            slideTo(index);
+        }
+
+        rightBtn.addEventListener("click", () => {
+            nextSlide();
+        })
+        leftBtn.addEventListener("click", () => {
+            prevSlide();
+        })
+        slideTo(currentIndex);
+        // Automation of slider
+        let interval, time = 3; 
+        const startInterval = () => {
+            interval = setInterval(() => {
+            nextSlide();
+            }, 1000 * time);
+        }
+
+        const stopInterval = () => {
+            clearInterval(interval);
+        }
+
+        slider.addEventListener("mouseover", ()=> {
+            stopInterval();
+        })
+
+        slider.addEventListener("mouseout", () => {
+            startInterval();
+        })
+    </script>
 
 </body>
 
