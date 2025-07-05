@@ -1,2 +1,2 @@
-![Home Page Preview](./client/public/screenshots/home-page.png)
-![Pricing Page Preview](./client/public/screenshots/pricing-page.png)
+![Home Page Preview](./assets/screenshots/home-page.png)
+![Pricing Page Preview](./assets/screenshots/pricing-page.png)
